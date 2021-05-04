@@ -1,14 +1,25 @@
 // create empty div with clock id 
 
 // create get time function 
+
 // using JS date object: 
-//  hours 
-//  minutes 
-//  miliseconds 
-//  meridian 
+// working off the date object
+function getTime () {
+const date = new Date; 
+let currentHour = date.getHours();
+let currentMinute = date.getMinutes();
+let currentSecond = date.getSeconds();
 
-// add them together using interpolation and save to a variable named clocktime 
+// function setSeconds() {
+//     const date = new Date;
+//     let currentMiliSecond = date.getMilliseconds();
+//     return currentMiliSecond
+// }
 
-//render clocktime to screen 
+let clock = document.querySelector('#clock') 
+clock.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
+setTimeout(getTime,1000)
+};
 
-// call get time function 
+getTime();
+
